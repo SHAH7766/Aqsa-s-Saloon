@@ -5,12 +5,12 @@ import { CustomCursor } from './components/CustomCursor';
 import { Navbar } from './components/Navbar';
 import { PersistentUI } from './components/PersistentUI';
 import { BookingCartDrawer } from './components/BookingCartDrawer';
+import { InstagramFeed } from './components/InstagramFeed';
 import { CartProvider } from './context/CartContext';
 import { Hero } from './sections/Hero';
 import { MarqueeStrip } from './sections/MarqueeStrip';
 import { About } from './sections/About';
 import { Services } from './sections/Services';
-import { LookBuilder } from './sections/LookBuilder';
 import { BridalPackages } from './sections/BridalPackages';
 import { BeforeAfter } from './sections/BeforeAfter';
 import { Gallery } from './sections/Gallery';
@@ -18,7 +18,6 @@ import { WhyChooseUs } from './sections/WhyChooseUs';
 import { Reviews } from './sections/Reviews';
 import { BookingWizard } from './sections/BookingWizard';
 import { ContactLocation } from './sections/ContactLocation';
-import { FinalCTA } from './sections/FinalCTA';
 import { Footer } from './components/Footer';
 
 export function App() {
@@ -64,7 +63,6 @@ export function App() {
           <MarqueeStrip />
           <About />
           <Services />
-          <LookBuilder />
           <BridalPackages />
           <BeforeAfter />
           <Gallery />
@@ -72,7 +70,7 @@ export function App() {
           <Reviews />
           <BookingWizard />
           <ContactLocation />
-          <FinalCTA />
+          <InstagramFeed />
         </main>
 
         <Footer />

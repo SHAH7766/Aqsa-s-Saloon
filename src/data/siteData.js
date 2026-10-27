@@ -335,7 +335,7 @@ export const siteData = {
       id: 4,
       category: "nails",
       title: "Bridal Nail Art & Crystals",
-      image: "https://images.unsplash.com/photo-1632345031435-8777f6c9ae8c?auto=format&fit=crop&q=80&w=800"
+      image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&q=80&w=800"
     },
     {
       id: 5,

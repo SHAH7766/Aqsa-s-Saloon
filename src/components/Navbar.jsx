@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone, Calendar, Globe } from 'lucide-react';
 import { siteData } from '../data/siteData';
+import { CartButton } from './BookingCartDrawer';
 
 export const Navbar = ({ onBookClick }) => {
   const [scrolled, setScrolled] = useState(false);
@@ -27,7 +28,6 @@ export const Navbar = ({ onBookClick }) => {
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Services", href: "#services" },
-    { name: "Look Builder", href: "#look-builder" },
     { name: "Bridal", href: "#bridal" },
     { name: "Gallery", href: "#gallery" },
     { name: "Reviews", href: "#reviews" },
@@ -107,6 +107,8 @@ export const Navbar = ({ onBookClick }) => {
 
             {/* Right Action Buttons */}
             <div className="hidden sm:flex items-center gap-3">
+              <CartButton />
+
               <button
                 onClick={toggleLanguage}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border transition-all ${
@@ -132,6 +134,7 @@ export const Navbar = ({ onBookClick }) => {
 
             {/* Mobile Hamburger Button */}
             <div className="flex lg:hidden items-center gap-3">
+              <CartButton />
               <button
                 onClick={toggleLanguage}
                 className={`px-2.5 py-1 rounded-full text-xs font-semibold border ${
