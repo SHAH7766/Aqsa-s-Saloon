@@ -4,14 +4,18 @@ import { ShoppingBag, X, Trash2, MessageCircle } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { siteData } from '../data/siteData';
 
-export const CartButton = () => {
+export const CartButton = ({ scrolled }) => {
   const { cartItems, setIsCartOpen } = useCart();
 
   return (
     <button
       onClick={() => setIsCartOpen(true)}
       data-cursor="Cart"
-      className="relative p-2.5 rounded-full bg-[#5A1226]/10 text-[#2B2B2B] hover:bg-[#5A1226] hover:text-[#C9A24B] transition-all flex items-center justify-center border border-[#C9A24B]/30"
+      className={`relative p-2.5 rounded-full transition-all flex items-center justify-center border ${
+        scrolled
+          ? "bg-[#5A1226]/10 text-[#2B2B2B] border-[#C9A24B]/30 hover:bg-[#5A1226] hover:text-[#C9A24B]"
+          : "bg-white/10 text-white border-white/30 hover:bg-white/20"
+      }`}
       title="View Booking Cart"
     >
       <ShoppingBag size={18} />
@@ -98,31 +102,40 @@ export const BookingCartDrawer = () => {
             </div>
 
             {/* Footer / Total / Checkout */}
-            {cartItems.length > 0 && (
-              <div className="pt-4 border-t border-[#C9A24B]/20 space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="font-poppins text-sm text-[#2B2B2B]/70 uppercase tracking-wider">Estimated Total</span>
-                  <span className="font-serif text-2xl font-bold text-[#5A1226]">
-                    Rs. {totalAmount.toLocaleString()}
-                  </span>
-                </div>
+            <div className="pt-4 border-t border-[#C9A24B]/20 space-y-3">
+              {cartItems.length > 0 && (
+                <>
+                  <div className="flex items-center justify-between">
+                    <span className="font-poppins text-sm text-[#2B2B2B]/70 uppercase tracking-wider">Estimated Total</span>
+                    <span className="font-serif text-2xl font-bold text-[#5A1226]">
+                      Rs. {totalAmount.toLocaleString()}
+                    </span>
+                  </div>
 
-                <button
-                  onClick={handleWhatsAppCheckout}
-                  className="w-full py-4 rounded-full bg-[#25D366] text-white font-poppins font-bold text-sm shadow-xl hover:bg-[#20ba5a] transition-all flex items-center justify-center gap-2"
-                >
-                  <MessageCircle size={18} fill="white" />
-                  <span>Send Booking to WhatsApp</span>
-                </button>
+                  <button
+                    onClick={handleWhatsAppCheckout}
+                    className="w-full py-4 rounded-full bg-[#25D366] text-white font-poppins font-bold text-sm shadow-xl hover:bg-[#20ba5a] transition-all flex items-center justify-center gap-2"
+                  >
+                    <MessageCircle size={18} fill="white" />
+                    <span>Send Booking to WhatsApp</span>
+                  </button>
 
-                <button
-                  onClick={clearCart}
-                  className="w-full py-2 rounded-full text-xs font-semibold text-[#2B2B2B]/60 hover:text-red-600 transition-colors"
-                >
-                  Clear Cart
-                </button>
-              </div>
-            )}
+                  <button
+                    onClick={clearCart}
+                    className="w-full py-2 rounded-full text-xs font-semibold text-[#2B2B2B]/60 hover:text-red-600 transition-colors"
+                  >
+                    Clear Cart
+                  </button>
+                </>
+              )}
+
+              <button
+                onClick={() => setIsCartOpen(false)}
+                className="w-full py-3 rounded-full bg-[#5A1226]/10 text-[#5A1226] hover:bg-[#5A1226] hover:text-white font-poppins font-semibold text-xs transition-all"
+              >
+                Continue Shopping / Close
+              </button>
+            </div>
           </motion.div>
         </div>
       )}

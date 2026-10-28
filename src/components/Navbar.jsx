@@ -50,7 +50,7 @@ export const Navbar = ({ onBookClick }) => {
               exit={{ height: 0, opacity: 0 }}
               className="bg-[#5A1226] text-[#FFF9F3] text-xs font-poppins py-2 px-4 text-center flex items-center justify-center gap-4 border-b border-[#C9A24B]/30 relative z-50"
             >
-              <span>{siteData.announcement}</span>
+              <span className="leading-snug">{siteData.announcement}</span>
               <button
                 onClick={() => setShowAnnouncement(false)}
                 className="text-[#C9A24B] hover:text-white transition-colors p-1"
@@ -107,7 +107,7 @@ export const Navbar = ({ onBookClick }) => {
 
             {/* Right Action Buttons */}
             <div className="hidden sm:flex items-center gap-3">
-              <CartButton />
+              <CartButton scrolled={scrolled} />
 
               <button
                 onClick={toggleLanguage}
@@ -134,7 +134,7 @@ export const Navbar = ({ onBookClick }) => {
 
             {/* Mobile Hamburger Button */}
             <div className="flex lg:hidden items-center gap-3">
-              <CartButton />
+              <CartButton scrolled={scrolled} />
               <button
                 onClick={toggleLanguage}
                 className={`px-2.5 py-1 rounded-full text-xs font-semibold border ${

@@ -52,7 +52,7 @@ export const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-28 pb-20 flex flex-col items-center">
+      <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-44 sm:pt-36 pb-20 flex flex-col items-center">
 
         {/* Top Luxury Badge */}
         <motion.div
